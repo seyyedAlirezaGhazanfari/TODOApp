@@ -9,7 +9,10 @@ import SwiftUI
 
 struct FilteredTODOView: View {
     var body: some View {
-        Text("filtered")
+        NavigationView{
+            Text("filter")
+                .navigationTitle("FILTER")
+        }
     }
 }
 
