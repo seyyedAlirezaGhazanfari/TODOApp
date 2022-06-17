@@ -9,21 +9,29 @@ import SwiftUI
 
 struct AllTODOView: View {
     
-    @State var items: [TODO] = [ TODO(date: Date(), id: 0, title: "WORK1", description: "This is good!")]
+    @Binding var items: [TODO]
+    let dateFormatter: DateFormatter = DateFormatter()
+    init(sItems items: Binding<[TODO]>) {
+        self._items = items
+        dateFormatter.timeStyle = .long
+        dateFormatter.dateStyle = .long
+    }
     var body: some View {
-        NavigationView{
-        List(items){item in
-            Text(item.title)
+        List{
+            ForEach(items){item in
+            VStack(alignment: .leading){
+                Text(item.title)
+                    .font(.headline)
+                Text(item.description)
+                    .font(.subheadline)
+                Text(dateFormatter.string(from: item.date))
+            }
+            }
+            .onDelete { itemIndex in
+                items.remove(atOffsets: itemIndex)
+            }
         }
-            .navigationTitle("TODO LIST")
             
         }
-        
-    }
 }
 
-struct AllTODOView_Previews: PreviewProvider {
-    static var previews: some View {
-        AllTODOView()
-    }
-}

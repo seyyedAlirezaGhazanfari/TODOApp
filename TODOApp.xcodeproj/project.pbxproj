@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A457F77285C8DE900C53A0A /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A457F76285C8DE900C53A0A /* AddView.swift */; };
+		5A457F78285C8DE900C53A0A /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A457F76285C8DE900C53A0A /* AddView.swift */; };
 		5AB8E039285BEBA7007F8174 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB8E038285BEBA7007F8174 /* Tests_iOS.swift */; };
 		5AB8E03B285BEBA7007F8174 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB8E03A285BEBA7007F8174 /* Tests_iOSLaunchTests.swift */; };
 		5AB8E045285BEBA7007F8174 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB8E044285BEBA7007F8174 /* Tests_macOS.swift */; };
@@ -43,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A457F76285C8DE900C53A0A /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		5AB8E020285BEBA3007F8174 /* TODOAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOAppApp.swift; sourceTree = "<group>"; };
 		5AB8E021285BEBA3007F8174 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5AB8E022285BEBA7007F8174 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,6 +115,7 @@
 				5AB8E05C285BFDBA007F8174 /* AllTODOView.swift */,
 				5AB8E05F285C012C007F8174 /* FilteredTODOView.swift */,
 				5AB8E062285C054E007F8174 /* Model.swift */,
+				5A457F76285C8DE900C53A0A /* AddView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -313,6 +317,7 @@
 			files = (
 				5AB8E063285C054E007F8174 /* Model.swift in Sources */,
 				5AB8E04A285BEBA7007F8174 /* ContentView.swift in Sources */,
+				5A457F77285C8DE900C53A0A /* AddView.swift in Sources */,
 				5AB8E060285C012C007F8174 /* FilteredTODOView.swift in Sources */,
 				5AB8E05D285BFDBA007F8174 /* AllTODOView.swift in Sources */,
 				5AB8E048285BEBA7007F8174 /* TODOAppApp.swift in Sources */,
@@ -325,6 +330,7 @@
 			files = (
 				5AB8E064285C054E007F8174 /* Model.swift in Sources */,
 				5AB8E04B285BEBA7007F8174 /* ContentView.swift in Sources */,
+				5A457F78285C8DE900C53A0A /* AddView.swift in Sources */,
 				5AB8E061285C012C007F8174 /* FilteredTODOView.swift in Sources */,
 				5AB8E05E285BFDBA007F8174 /* AllTODOView.swift in Sources */,
 				5AB8E049285BEBA7007F8174 /* TODOAppApp.swift in Sources */,

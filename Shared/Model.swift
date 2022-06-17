@@ -10,7 +10,7 @@ import Foundation
 
 struct TODO: Identifiable {
     var date: Date
-    var id: Int
+    var id = UUID()
     var title: String
     var description: String
 }
