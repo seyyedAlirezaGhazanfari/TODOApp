@@ -8,9 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView{
+            AllTODOView()
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("ALL")
+                }
+            FilteredTODOView()
+                .tabItem({
+                    Label("filter"
+                          , systemImage: "person.crop.circle.fill")
+                })
+        }.padding()
+        
     }
 }
 
