@@ -21,7 +21,10 @@ struct ContentView: View {
                 }
                 .tag(1)
                 
-            FilteredTODOView(items: $items)
+            FilteredTODOView(items: $items, selected: items.filter { obj in
+                Calendar.current.dateComponents([.day, .month, .year], from: Date()) == Calendar.current.dateComponents([.day, .month, .year], from: obj.date)
+            }
+                             )
                 .tabItem({
                     Label("filter"
                           , systemImage: "person.crop.circle.fill")

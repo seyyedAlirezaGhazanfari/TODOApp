@@ -8,16 +8,47 @@
 import SwiftUI
 
 struct FilteredTODOView: View {
-    var body: some View {
-        NavigationView{
-            Text("filter")
-                .navigationTitle("FILTER")
-        }
+    
+    @Binding var items: [TODO]
+    @State var selectedItems: [TODO]
+    @State var selectedDate: Date
+    
+    init(items firsts: Binding<[TODO]>, selected selectedItems: [TODO]) {
+        _selectedDate = State(initialValue: Date())
+        _items = firsts
+        _selectedItems = State(initialValue: selectedItems)
     }
-}
-
-struct FilteredTODOView_Previews: PreviewProvider {
-    static var previews: some View {
-        FilteredTODOView()
+    
+    var body: some View {
+        VStack{
+            DatePicker("filter date", selection: $selectedDate, displayedComponents: .date)
+                .onChange(of: selectedDate, perform: {item in
+                    selectedItems = items.filter { obj in
+                        Calendar.current.dateComponents([.day, .month, .year], from: selectedDate) == Calendar.current.dateComponents([.day, .month, .year], from: obj.date)
+                    }
+                })
+            List{
+                ForEach(selectedItems){item in
+                    VStack(alignment: .leading){
+                    Text(item.title)
+                        .font(.title)
+                    Text(item.description)
+                        .font(.title2)
+                    Text(item.date, style: .date)
+                        .font(.title2)
+                }
+                }
+                .onDelete { indexs in
+                    indexs.forEach { (i) in
+                        items.removeAll { item in
+                            item.id == selectedItems[i].id
+                        }
+                    }
+                    selectedItems.remove(atOffsets: indexs)
+                    
+                }
+            }
+        }
+                
     }
 }
